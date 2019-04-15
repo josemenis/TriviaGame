@@ -35,6 +35,8 @@ var questions = [
   // count for incorrect questions answered
   var incorrect = 0;
 
+  // 1.Set interval per https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval 
+  var IntervalID;
   // below are variables that will be put in the html spot
   var questionEl = document.getElementById("question");
   var answer1El = document.getElementById("answer1");
@@ -60,9 +62,11 @@ var questions = [
       timerEl.textContent = timer;
       // if timer equals 0
       if (timer === 0) {
+
           // not exactly sure what it does, but it's supposed to stop timer at zero, but it doesn't
-          clearInterval(timer);
+          clearInterval(IntervalID);
           console.log(clearInterval);
+
           // this is supposed to change the question when timer equals 0, but it's not working
           displayQuestion();
           console.log(displayQuestion);
@@ -72,9 +76,10 @@ var questions = [
   // function to display array   
   function displayQuestion() {
     // 
-    //clearInterval(intervalID);
-    // 
-   intervalID = setInterval(decrement, 1000);
+    //clearInterval(IntervalID);
+
+   // 2.set interval https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval 
+   IntervalID = setInterval(decrement, 1000);
     // below takes ln.39-43 and sets them to the  var counter
     questionEl.textContent = questions[counter].question;
     answer1El.textContent = questions[counter].answer1;
@@ -96,7 +101,7 @@ answers.forEach(answer =>
   // adds a click event to all with class = "answer"   
   answer.addEventListener("click", event => {
       // not sure about this clearInterval bc it's not working
-      clearInterval(intervalID);
+      clearInterval(IntervalID);
     //   console.log(clearInterval);
       // if answer clicked equals correctAnwer in array,  
       if (event.target.textContent === questions[counter].correctAnswer) {
@@ -122,7 +127,7 @@ answers.forEach(answer =>
   })
   );
   
-    // I'm not sure what this does from ln.127-129
+    // I'm not sure what this does
     correctEl.textContent = correct;
     incorrectEl.textContent = incorrect;
     timerEl.textContent = timer;
@@ -135,7 +140,7 @@ answers.forEach(answer =>
     
     
     // $(".answer").on("click", function(event) {
-        //     clearInterval(intervalID);
+        //     clearInterval(IntervalID);
         //     if (event.target.textContent === questions[counter].correctAnswer) {
             //       correct++;
             //       console.log(correct);
