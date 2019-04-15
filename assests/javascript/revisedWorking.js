@@ -139,7 +139,7 @@ correctEl.textContent = correct;
 incorrectEl.textContent = incorrect;
 timerEl.textContent = timer;
 
-// Last would be calls for functions
+
 
 // $(".answer").on("click", function(event) {
 //     clearInterval(IntervalID);
