@@ -1,7 +1,7 @@
 // array for questions and answers
 var questions = [
   {
-    question: 'Is it raining?',
+    question: 'Is it raining up in here?',
     answer1: 'Yes',
     answer2: 'No',
     answer3: 'Maybe',
@@ -64,7 +64,7 @@ function decrement () {
     timer = 11
     // after timer === 0 clearInterval is ran and told counter to increment.
     counter++
-     // after timer === 0 clearInterval is ran and told incorrext to increment I think?
+    // after timer === 0 clearInterval is ran and told incorrext to increment I think?
     incorrect++
     incorrectEl.textContent = incorrect
 
@@ -78,11 +78,11 @@ function displayQuestion () {
   // Once counter === array length, below is ran.
   if (counter === questions.length) {
     console.log('GAME OVER, MAN!!!')
-    questionEl.textContent = 'Congrats, you finished';
-    answer1El.textContent = '';
-    answer2El.textContent = '';
-    answer3El.textContent = '';
-    answer4El.textContent = '';
+    questionEl.textContent = 'Congrats, you finished'
+    answer1El.textContent = ''
+    answer2El.textContent = ''
+    answer3El.textContent = ''
+    answer4El.textContent = ''
     // return within a function tells JS to stop running function and leave it.
     return
   }
@@ -90,7 +90,7 @@ function displayQuestion () {
   // clearInterval(IntervalID);
   // 2.set interval https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval
   IntervalID = setInterval(decrement, 1000)
-  // below takes ln.39-43 and sets them to the  var counter
+  // below takes ln.39-43 and sets them to the var counter
   questionEl.textContent = questions[counter].question
   answer1El.textContent = questions[counter].answer1
   answer2El.textContent = questions[counter].answer2
