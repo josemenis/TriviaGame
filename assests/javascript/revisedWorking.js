@@ -99,15 +99,17 @@ function displayQuestion () {
 }
 // makes the submit button a click event that runs display quesstion.
 // issue with function, multiple clicks speed up timers decrement
-document.getElementById('submit').addEventListener('click', function () {
+document.getElementById('submit').addEventListener('click', function (e) {
+  e.preventDefault()
   displayQuestion()
 })
 // arrow loop for array by the class = "answer"
 answers.forEach(answer =>
   // adds a click event to all with class = "answer"
   answer.addEventListener('click', event => {
-    // not sure about this clearInterval bc it's not working
+    // clearInterval is told to set timer to 10 seconds.
     clearInterval(IntervalID)
+    timer = 11
     //   console.log(clearInterval);
     // if answer clicked equals correctAnwer in array,
     if (event.target.textContent === questions[counter].correctAnswer) {
