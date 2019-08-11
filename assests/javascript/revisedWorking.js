@@ -99,8 +99,8 @@ function displayQuestion () {
 }
 // makes the submit button a click event that runs display quesstion.
 // issue with function, multiple clicks speed up timers decrement
-document.getElementById('submit').addEventListener('click', function (e) {
-  e.preventDefault()
+document.getElementById('submit').addEventListener('click', function () {
+
   displayQuestion()
 })
 // arrow loop for array by the class = "answer"
@@ -135,40 +135,7 @@ answers.forEach(answer =>
   })
 )
 
-// I'm not sure what this does
+// sets text back to = below
 correctEl.textContent = correct
 incorrectEl.textContent = incorrect
 timerEl.textContent = timer
-
-// $(".answer").on("click", function(event) {
-//     clearInterval(IntervalID);
-//     if (event.target.textContent === questions[counter].correctAnswer) {
-//       correct++;
-//       console.log(correct);
-//       correctEl.textContent = correct;
-//       counter++;
-//       // update the DOM with the new Correct
-//       displayQuestion();
-//     } else {
-//       incorrect++;
-//       incorrectEl.textContent = incorrect;
-//       // update the DOM with the new Correct
-//       counter++;
-//       displayQuestion();
-//     }
-//   });
-
-//   Below is a interval function that I'm not sure how to add it to the code
-//       var timer = setInterval(function() {
-//         if (startTime === 1){
-//             clearInterval(timer);
-//             newTimer.innerHTML= "";
-//             //placeholder. need to create a third container
-//             //Make consistent. invisible/visible
-//             newJumbotron[0].style.display = "Initial";
-
-//         };
-//         console.log(startTime -= 1);
-//         newTimer.innerHTML = startTime;
-//     }, 1000);
-// };

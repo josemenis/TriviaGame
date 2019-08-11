@@ -1,6 +1,4 @@
 # JavaScript Assignment 2
-NOTE: 6/23/19 Looks like I fixed this a long time ago, will submit to be re-graded.
-### Overview
 
 In this assignment, You'll create a Trivia game using JavaScript for the logic and jQuery to manipulate HTML. Be sure to layout this app with valid HTML and stylish CSS.
 
