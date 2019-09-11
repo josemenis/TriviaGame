@@ -3,7 +3,9 @@
 ---
 # Overview:
 
-## A Trivia game using Vanilla JavaScript.
+## A Random questions game using Vanilla JavaScript.
+
+[Link to App](https://josemenis.github.io/TriviaGame/)
 ---
 
 ## Option One: Basic Quiz (Timed Form):
